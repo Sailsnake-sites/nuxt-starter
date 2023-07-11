@@ -1,0 +1,65 @@
+/* COLORS 
+- 
+- 
+*/
+
+$white: #fff;
+$light-grey: #F2F2F2;
+$grey: #888888;
+$black: #1A1A1A; 
+
+
+/* FONTS
+- 
+- 
+*/
+$font-main: 'Arial';
+$font-accent: 'Arial Rounded MT';
+$font-art: 'Segoe';
+
+
+//* sizes
+$font-size1: 4rem; // 52pt?? || 48, 60
+$font-size2: 2.6667rem; // 32pt 
+$font-size3: 2rem; // 24pt
+$font-size4: 1.75rem; // 21pt
+$font-size5: 1.3333rem; // 16pt
+$font-size6: 1.1667rem; // 14pt
+$font-size7: 1rem; // 12pt
+
+/* SPACING sets
+- 
+- 
+*/
+
+$spacing1: 1em;
+$spacing2: 1em;
+$spacing3: 1em;
+$spacing4: 1em;
+$spacing5: 1em;
+$spacing6: 1em;
+$spacing7: 1em;
+$spacing8: 1em;
+
+/* Border radius 
+- 
+- 
+*/
+
+$border-radius1: $spacing1;
+$border-radius2: $spacing2;
+$border-radius3: $spacing3;
+
+/* SHADOWS 
+- 
+- 
+*/
+
+$shadow1: 0 0 $spacing1 rgba($color: $black, $alpha: 0.6);
+
+/* TRANSITIONS 
+- 
+- 
+*/
+
+$transition1: 50ms ease;

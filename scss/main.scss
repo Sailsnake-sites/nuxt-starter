@@ -1,0 +1,163 @@
+html * {
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust */
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth */
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    margin: 0;
+    font-size: 16px; // 12pt
+    @include media(xlg, xxlg) {
+        font-size: clamp(16px, 0px + 0.8333vw, 32px);
+    }
+}
+
+
+/* Works on Chrome, Edge, and Safari */
+body {
+    // overflow-y: scroll;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+}
+
+body::-webkit-scrollbar {
+    /* WebKit */
+    width: 0;
+    height: 0;
+}
+
+/* Works on Firefox */
+a {
+    text-decoration: none;
+    color: inherit;
+	&:hover {
+		color: $base-color;
+	}
+}
+
+// Canvas properties
+
+html,
+body {
+    min-height: 100vh;
+    width: 100%;
+    //==
+    margin: 0;
+    padding: 0;
+    //==
+	background-color: $grey;
+	color: $white;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+$menu-aside--max-width: 31.25em;
+$main--max-width: 56.25em;
+$aside--max-width: 18.75em;
+
+#page-wrapper {
+    position: relative;
+    display: flex;
+    // 13 column, fib subdivisions of 3, 5, 8 (=13)
+    aside#content-menu {
+        flex-basis: calc(3 / 13 * 100%);
+    }
+    main {
+        flex-basis: calc(8 / 13 * 100%);
+        flex-grow: 1;
+		background: gold;
+		// TODO: this is temp to test sticky on contentMenu
+		min-height: 200vh;
+    }
+    aside#sidebar {
+        flex-basis: calc(2 / 13 * 100%);
+    }
+    margin-inline: auto;
+	@include media(xsm) {
+		display: block;
+	}
+}
+
+aside#content-menu {
+	position: sticky;
+	display: block;
+	height: max-content;
+	max-height: 100vh;
+	min-width: 300px;
+	max-width: 600px;
+    top: 0em;
+	margin: 0;
+	justify-self: end;
+	overflow: auto;
+    @include media(xsm) {
+        position: relative;
+		max-height: 5em;
+		max-width: none;
+		top: 0;
+        margin-top: 0;
+        overflow: hidden;
+    }
+}
+
+main {
+	min-height: 100vh;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin-inline: auto;
+	:deep(.text) {
+		flex-basis: auto;
+		margin: 0;
+		height: max-content;
+	}
+	@include media(xsm) {
+		padding-inline: $spacing2;
+	}
+	img {
+		max-width: 100%;
+	}
+}
+
+$text--max-width: 37.5em;
+
+main .text {
+    max-width: $text--max-width; // 600/16
+	margin-inline: auto;
+}
+
+aside#sidebar {
+    max-width: $aside--max-width;
+	display: flex; 
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+    @include media(xsm, sm, md) {
+        position: fixed;
+		display: none; // could pin to bottom with push up BTN
+		max-height: 0;
+		max-width: none;
+        width: 100%;
+		margin: 0 auto;
+        bottom: 0;
+        border: none;
+
+    }
+}
+
+footer {
+    width: 100%;
+    height: 6em;
+    padding: 2em;
+}

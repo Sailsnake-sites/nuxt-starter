@@ -1,0 +1,162 @@
+html * {
+	/* https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust */
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	/* https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth */
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+html {
+	margin: 0;
+	font-size: 14px; // 12pt
+	font-family: $font-main;
+	@include media(lg, xlg, xxlg) {
+		font-size: clamp(14px, 0px + 0.7292vw, 28px);
+		// font-size: 16px;
+	}
+}
+
+/* Works on Chrome, Edge, and Safari */
+body {
+	// overflow-y: scroll;
+	scrollbar-width: none;
+	/* Firefox */
+	-ms-overflow-style: none;
+	/* Internet Explorer 10+ */
+}
+
+body::-webkit-scrollbar {
+	/* WebKit */
+	width: 0;
+	height: 0;
+}
+
+/* Works on Firefox */
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+// Canvas properties
+
+html,
+body {
+	min-height: 100vh;
+	width: 100%;
+	//==
+	margin: 0;
+	padding: 0;
+	//==
+	font-family: $font-main;
+	background-color: transparent;
+	color: $black;
+}
+
+body * {
+	box-sizing: border-box;
+}
+
+#site-wrapper {
+	position: relative;
+	width: 100%;
+	@include media(xsm) {
+		display: block;
+	}
+	#banner {
+		grid-column: 1;
+		grid-row: 1;
+	}
+	.layout-wrapper {
+		grid-column: 1;
+		grid-row: 2;
+		display: grid;
+		grid-template-columns: 1fr;
+		main {
+			grid-column: 1;
+			width: 100%;
+			height: 100%;
+			min-height: 100vh;
+		}
+		@include media(xsm) {
+			display: block;
+			main {
+				padding-bottom: 10em;
+			}
+		}
+	}
+	footer {
+		position: absolute;
+		grid-column: 1;
+		width: 100%;
+		grid-row: 2;
+		bottom: 0;
+		margin-bottom: 0;
+	}
+	@include media(xsm) {
+		display: block;
+		footer {
+			position: relative;
+		}
+	}
+}
+
+main {
+	figure.image {
+		position: relative;
+		margin: 0; // default override
+		max-width: 100%;
+		margin-inline: auto;
+		img {
+			display: block;
+			margin-inline: auto;
+			max-height: 70vh;
+		}
+	}
+}
+
+// Cards
+
+.cards--container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0;
+	padding: 0;
+	.__card {
+		flex: 2 2 15em;
+		height: 15em;
+		position: relative;
+		display: grid;
+		image,
+		span {
+			position: relative;
+			grid-column: 1;
+			grid-row: 1;
+		}
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			inset: 0;
+			object-fit: cover;
+		}
+		.__card--overlay {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			inset: 0;
+			background: transparent;
+		}
+		span {
+			justify-self: center;
+			align-self: center;
+		}
+		@include hover {
+			.__card--overlay {
+				background: transparent;
+			}
+		}
+	}
+}

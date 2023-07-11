@@ -1,0 +1,61 @@
+/* COLORS 
+- 
+- 
+*/
+
+$white: #fff;
+$light-grey: #ac9d9a;
+$grey: #35302F;
+$black: #110F0A; 
+$base-color: #831b75;
+
+
+/* FONTS
+- 
+- 
+*/
+// $font-main: 'louis_george_cafe',
+// sans-serif;
+// $font-title: 'babapro',
+// sans-serif;
+// $font-title__bold: 'babaproBold',
+// sans-serif;
+// $font-accent: 'futurist-fw',
+// sans-serif;
+// $font-art: 'delilah',
+// sans-serif;
+
+
+//* sizes
+// $font-size1: 3.5rem;
+// $font-size2: 2.5rem;
+// $font-size3: 1.8rem;
+// $font-size4: 1.4rem;
+// $font-size5: 1rem;
+// $font-size6: 0.9rem;
+// $font-size7: 0.7rem;
+
+/* SPACING sets
+- 
+- 
+*/
+
+$spacing1: 0.2em;
+$spacing2: 0.5em;
+
+
+
+/* SHADOWS 
+- 
+- 
+*/
+
+$shadow1: 0 0 $spacing2 rgba($color: $black, $alpha: 0.7);
+
+/* TRANSITIONS 
+- 
+- 
+*/
+
+$transition1: 50ms ease;
+$transition2: 100ms cubic-bezier(.4, .12, .35, .89);
